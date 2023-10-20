@@ -13,8 +13,18 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
+
 	@ManyToOne
 	private Endereco endereco;
+
+	public Cliente() {
+		// Construtor vazio
+	}
+
+	public Cliente(String nome, Endereco endereco) {
+		this.nome = nome;
+		this.endereco = endereco;
+	}
 
 	public Long getId() {
 		return id;
@@ -39,5 +49,5 @@ public class Cliente {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-
 }
+
